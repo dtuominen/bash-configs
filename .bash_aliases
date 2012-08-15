@@ -1,0 +1,13 @@
+alias mailserv='python -m smtpd -n -c DebuggingServer localhost:1025'
+alias jobstoar='source /Users/dylan/dev/jobstoar/bin/activate'
+alias ..='cd ..'
+alias sendmail='python manage.py send_mail'
+alias retry='python manage.py retry_deferred'
+alias runserver='python manage.py runserver'
+alias manageshell='python manage.py shell'
+alias django='source /Users/dylan/dev/django/bin/activate'
+alias testenv='source /Users/dylan/dev/testenv/bin/activate'
+alias newenv='source /Users/dylan/dev/newenv/bin/activate'
+alias status='/Users/dylan/jobstoar/bin/status'
+alias runserver='python manage.py runserver'
+alias maillog="cat ~/cron_mail.log | sed '/^(.*/d'"
