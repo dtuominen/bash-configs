@@ -1,6 +1,19 @@
+function unsource () { deactivate;
+                        if [[ $PATH =~ $HOME/bin ]]
+                        then
+                           return 0 
+                        else
+                            export PATH=$PATH:$HOME/bin
+                        fi
+                    }
 function bell () { echo -e \\07; }
 function venv () { source ~/dev/$1/bin/activate;
-                   export PATH=$PATH:$HOME/bin;
+                   if [[ $PATH =~ $HOME/bin ]]
+                   then
+                       return 0
+                   else
+                       export PATH=$PATH:$HOME/bin;
+                   fi
         }
 function mkcd { mkdir $1 && cd $1; }
 function displayhidden () { 

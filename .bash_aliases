@@ -1,3 +1,4 @@
+alias deactivate='deactivate && export PATH=$PATH:$HOME/bin'
 alias mailserv='python -m smtpd -n -c DebuggingServer localhost:1025'
 alias jobstoar='source /Users/dylan/dev/jobstoar/bin/activate'
 alias ..='cd ..'
