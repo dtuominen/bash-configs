@@ -1,20 +1,11 @@
-function unsource () { deactivate;
-                        if [[ $PATH =~ $HOME/bin ]]
-                        then
-                           return 0 
-                        else
-                            export PATH=$PATH:$HOME/bin
-                        fi
-                    }
+#constants
+function url() {
+    open http://$1
+}
+function venv () { 
+    source ~/.venv/$1/bin/activate;
+}
 function bell () { echo -e \\07; }
-function venv () { source ~/dev/$1/bin/activate;
-                   if [[ $PATH =~ $HOME/bin ]]
-                   then
-                       return 0
-                   else
-                       export PATH=$PATH:$HOME/bin;
-                   fi
-        }
 function mkcd { mkdir $1 && cd $1; }
 function displayhidden () { 
     if [ $# -eq 1 ];
@@ -31,3 +22,14 @@ function sync () { if [[ -f $PWD/manage.py ]]; then
                    fi
                    echo "YOU DONE FUCKED UP";
         }
+function tab(){
+    echo -e "\033];$1\007," 
+}
+# cdf: cd to the directory in the Finder's front window
+alias cdf='cd "$(~/bin/posd)"'
+
+# posfind: search the directory frontmost in the Finder
+function posfind { find "`~/bin/posd`" -name "*$1*"; }
+
+# posgrep: grep the directory frontmost in the Finder
+function posgrep { grep -iIrn "$1" "`~/bin/posd`"; }
